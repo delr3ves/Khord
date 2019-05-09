@@ -1,0 +1,70 @@
+package dev.serch.khord.music
+
+enum class Interval(val semitones: Int) {
+    FIRST(0),
+    AUGMENTED_FIRST(1),
+    MINOR_SECOND(1),
+    MAJOR_SECOND(2),
+    AUGMENTED_SECOND(3),
+    DIMINISHED_THIRD(2),
+    MINOR_THIRD(3),
+    MAJOR_THIRD(4),
+    AUGMENTED_THIRD(5),
+    DIMINISHED_FOURTH(4),
+    FOURTH(5),
+    AUGMENTED_FOURTH(6),
+    DIMINISHED_FIFTH(6),
+    FIFTH(7),
+    AUGMENTED_FIFTH(8),
+    DIMINISHED_SIXTH(7),
+    MINOR_SIXTH(8),
+    MAJOR_SIXTH(9),
+    AUGMENTED_SIXTH(10),
+    DIMINISHED_SEVENTH(9),
+    MINOR_SEVENTH(10),
+    MAJOR_SEVENTH(11),
+    AUGMENTED_SEVENTH(12),
+    AUGMENTED_EIGHTH(11),
+    EIGHTH(12);
+
+    companion object {
+        val INTERVALS_BY_CHORD = mapOf(
+            "" to listOf(MAJOR_THIRD, FIFTH),
+            "m" to listOf(MINOR_THIRD, FIFTH),
+            "7" to listOf(MAJOR_THIRD, FIFTH, MINOR_SEVENTH),
+            "m7" to listOf(MINOR_THIRD, FIFTH, MINOR_SEVENTH),
+            "5" to listOf(FIFTH),
+            "6" to listOf(MAJOR_THIRD, FIFTH, MAJOR_SIXTH),
+            "m6" to listOf(MINOR_THIRD, FIFTH, MAJOR_SIXTH),
+            "maj7" to listOf(MAJOR_THIRD, FIFTH, MAJOR_SEVENTH),
+            "º" to listOf(MINOR_THIRD, DIMINISHED_FIFTH),
+            "º7" to listOf(MINOR_THIRD, DIMINISHED_FIFTH, DIMINISHED_SEVENTH),
+            "-5" to listOf(MAJOR_THIRD, DIMINISHED_FIFTH),
+            "+" to listOf(MAJOR_THIRD, AUGMENTED_FIFTH),
+
+            "sus2" to listOf(MAJOR_SECOND, FIFTH),
+            "sus4" to listOf(FOURTH, FIFTH),
+            "7sus4" to listOf(FOURTH, FIFTH, MINOR_SEVENTH),
+            "m7-5" to listOf(MINOR_THIRD, DIMINISHED_FIFTH, MINOR_SEVENTH),
+            "add9" to listOf(MAJOR_THIRD, FIFTH, MAJOR_SECOND),
+            "madd9" to listOf(MINOR_THIRD, FIFTH, MAJOR_SECOND),
+            "6add9" to listOf(MAJOR_THIRD, MAJOR_SIXTH, MAJOR_SECOND),
+            "m6add9" to listOf(MINOR_THIRD, MAJOR_SIXTH, MAJOR_SECOND),
+            "7-5" to listOf(MAJOR_THIRD, DIMINISHED_FIFTH, MINOR_SEVENTH),
+            "7+5" to listOf(MAJOR_THIRD, AUGMENTED_FIFTH, MINOR_SEVENTH),
+            "7-9" to listOf(MAJOR_THIRD, FIFTH, MINOR_SEVENTH, MINOR_SECOND),
+            "7+9" to listOf(MAJOR_THIRD, FIFTH, MINOR_SEVENTH, AUGMENTED_SECOND),
+            "m(maj7)" to listOf(MINOR_THIRD, FIFTH, MAJOR_SEVENTH),
+            "maj7-5" to listOf(MAJOR_THIRD, DIMINISHED_FIFTH, MAJOR_SEVENTH),
+            "maj7+5" to listOf(MAJOR_THIRD, AUGMENTED_FIFTH, MAJOR_SEVENTH),
+            "9" to listOf(MAJOR_THIRD, FIFTH, MINOR_SEVENTH, MAJOR_SECOND),
+            "m9" to listOf(MINOR_THIRD, FIFTH, MINOR_SEVENTH, MAJOR_SECOND),
+            "maj9" to listOf(MAJOR_THIRD, FIFTH, MAJOR_SEVENTH, MAJOR_SECOND),
+            "11" to listOf(MAJOR_THIRD, FIFTH, MINOR_SEVENTH, MAJOR_SECOND, FOURTH),
+            "13" to listOf(MAJOR_THIRD, FIFTH, MINOR_SEVENTH, MAJOR_SIXTH),
+            "4" to listOf(FOURTH),
+            "add11" to listOf(MAJOR_THIRD, FIFTH, FOURTH)
+
+        )
+    }
+}
